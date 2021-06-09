@@ -1,18 +1,19 @@
 #include <iostream>
 #include <vector>
-
 using namespace std;
 
 int main() {
-    int num;
-    cin >> num;
-    vector<int> v = {};
-    do {
-        v.push_back(num % 2);
-        num /= 2;
-    } while ( num != 0);
-    for (int i = 1; i <= v.size(); i++){
-        cout << v[v.size() - i];
+    int n;
+    vector<int> bits;
+
+    cin >> n;
+    while (n > 0) {
+        bits.push_back(n % 2);
+        n /= 2;
+    }
+
+    for (int i = bits.size() - 1; i >= 0; --i) {
+        cout << bits[i];
     }
     return 0;
 }
